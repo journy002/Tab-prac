@@ -1,53 +1,49 @@
-const btnBox = document.querySelectorAll('.btn-list .btn-add-txt');
+const btnList = document.querySelectorAll('.btn-list .btn-add-txt, .special-character .character button');
 const txtBox = document.querySelector('.txt-box .txt');
-const characterTabBtn = document.querySelector('.character-wrap')
 
-
-btnBox.forEach(e => {
+btnList.forEach(e => {
     e.addEventListener('click', () => {
-        let txt = e.innerHTML;
-        txtBox.value += txt;
-        txtBox.focus();
+        txtBox.value += e.innerHTML
+        txtBox.focus()
     });
 });
 
-
+const characterBtn = document.querySelector('.character-wrap');
 function toggleBox(target) {
-    const tabShow = document.querySelector(target);
-    if(tabShow !== null) {
-        if(tabShow.classList.contains('show')){
-            tabShow.classList.remove('show');
-        }else {
-            tabShow.classList.add('show')
+    if(target !== null) {
+        if(characterBtn.classList.contains('show')) {
+            characterBtn.classList.remove('show')
+        } else {
+            characterBtn.classList.add('show')
         }
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', e => {
             if(e.target.closest(target) == null) {
-                tabShow.classList.remove('show')
+                characterBtn.classList.remove('show')
             }
-        })
-    };
+        });
+    }
 };
 
-const characterBtn = document.querySelectorAll('.special-character > .btn-wrap .btn');
-const characterCon = document.querySelectorAll('.special-character .character');
+const specialTabBtn = document.querySelectorAll('.special-character .btn-wrap .btn');
+const specialTabCon = document.querySelectorAll('.special-character .character');
 
-if(characterBtn.length > 0) {
-    const siblingsTabBtn = t => [...characterBtn].filter(e => e !== t);
-    const siblingsTabCon = t => [...characterCon].filter(e => e !== t);
+if(specialTabBtn.length > 0) {
+    const siblingsBtn = t => [...specialTabBtn].filter(e => e !== t);
+    const siblingsCon = t => [...specialTabCon].filter(e => e !== t);
 
-    for(let i = 0; i < characterBtn.length; i++) {
-        characterBtn[i].addEventListener('click', function(){
-            characterBtn[i].classList.add('active');
-            characterCon[i].classList.add('active');
-            const siblingsBtn = siblingsTabBtn(characterBtn[i]);
-            const siblingsCon = siblingsTabCon(characterCon[i]);
+    for(let i = 0; i < specialTabBtn.length; i++) {
+        specialTabBtn[i].addEventListener('click', () => {
+            specialTabBtn[i].classList.add('active');
+            specialTabCon[i].classList.add('active');
+            const siblingBtn = siblingsBtn(specialTabBtn[i]);
+            const siblingCon = siblingsCon(specialTabCon[i]);
 
-            siblingsBtn.forEach(function(e) {
+            siblingBtn.forEach(function(e) {
                 e.classList.remove('active');
             });
-            siblingsCon.forEach(function(e){
+            siblingCon.forEach(function(e) {
                 e.classList.remove('active')
-            });
+            })
         });
-    };
-};
+    }
+}
