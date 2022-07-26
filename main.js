@@ -1,13 +1,13 @@
 const btnList = document.querySelectorAll('.btn-list .btn-add-txt, .special-character .character button');
 const txtBox = document.querySelector('.txt-box .txt');
-
+// txtarea에 클릭된 btn value값 넣기
 btnList.forEach(e => {
     e.addEventListener('click', () => {
         txtBox.value += e.innerHTML
         txtBox.focus()
     });
 });
-
+// 특수문자 버튼 클릭시 show 활성화
 const characterBtn = document.querySelector('.character-wrap');
 function toggleBox(target) {
     if(target !== null) {
@@ -23,7 +23,7 @@ function toggleBox(target) {
         });
     }
 };
-
+// 일반,카카오 특수문자 선택시 active 활성
 const specialTabBtn = document.querySelectorAll('.special-character .btn-wrap .btn');
 const specialTabCon = document.querySelectorAll('.special-character .character');
 
@@ -46,4 +46,9 @@ if(specialTabBtn.length > 0) {
             })
         });
     }
-}
+};
+// txtarea 초기화
+const resetBtn = document.querySelector('.reset-btn');
+resetBtn.addEventListener('click', () => {
+    txtBox.value = '';
+});
