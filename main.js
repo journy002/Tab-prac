@@ -52,3 +52,16 @@ const resetBtn = document.querySelector('.reset-btn');
 resetBtn.addEventListener('click', () => {
     txtBox.value = '';
 });
+
+//modalPopup
+const modal = document.querySelector('.modal-container');
+const modalOpen = document.querySelector('.modal-open');
+const modalClo = document.querySelector('.modal-close');
+
+modalOpen.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+modalClo.addEventListener('click', () => {
+    modal.classList.remove('active')
+})
