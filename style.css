@@ -1,0 +1,73 @@
+.txt {
+    width: 13rem;
+    height: 5rem;
+}
+
+.btn {
+    margin-top: 1rem;
+    width: 13rem;
+    height: 2rem;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.show {
+    display: inline-block;
+}
+
+.btn.active {
+    display: block;
+}
+
+.character-wrap {
+    display: inline-block;
+}
+
+.character-wrap .btn-bg {
+    color: #000;
+    background-color: #fff;
+}
+
+.character-wrap.show .btn-bg {
+    color: #fff;
+    background-color: cadetblue;
+}
+
+.character-wrap .special-character {
+    display: none;
+}
+
+.character-wrap.show .special-character {
+    display: block;
+}
+
+.character-wrap .special-character .btn-wrap {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 12px;
+}
+
+.character-wrap .special-character .btn-wrap .btn {
+    display: inline-block;
+    width: 6rem;
+}
+
+.character-wrap .special-character .btn-wrap .btn.active {
+    background-color: aquamarine;
+}
+
+.character-wrap .special-character .character {
+    display: none;
+}
+
+.character-wrap .special-character .character.active {
+    display: block;
+}
+
+.character-wrap .special-character .character button {
+    background-color: #fff;
+    border: 1px solid ;
+}

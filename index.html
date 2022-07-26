@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="txt-box">
+            <textarea class="txt" placeholder="texts"></textarea>
+        </div>
+        <div class="btn-list">
+            <button class="btn-add-txt">이름</button>
+            <button class="btn-add-txt">이름(1)</button>
+            <button class="btn-add-txt">이름(2)</button>
+            <button class="btn-add-txt">이름(3)</button>
+        </div>
+        <div class="character-wrap show">
+            <button class="btn btn-bg" onclick='toggleBox(".character-wrap")' >특수문자</button>
+            <div class="special-character">
+                <div class="btn-wrap">
+                    <div class="btn active">일반 특수문자</div>
+                    <div class="btn">카카오 특수문자</div>
+                </div>
+                <div class="character active">
+                    <button>일반1</button>
+                    <button>일반2</button>
+                    <button>일반3</button>
+                </div>
+                <div class="character">
+                    <button>카카오1</button>
+                    <button>카카오2</button>
+                    <button>카카오3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>
